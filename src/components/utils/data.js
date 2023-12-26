@@ -28,3 +28,10 @@ export const product = [
     rating: 4.9
   },
 ];
+
+export const event =[
+  {img: "./hoodie2.png"},
+  {img: "./purepng.png"},
+  {img: "./jam2.png"},
+  // {img: "./sepatu2.png"},
+]

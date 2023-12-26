@@ -1,9 +1,11 @@
 import React from "react";
 import css from "./Explore.module.scss";
 import { IoMdStar } from "react-icons/io";
-import { FaHeart, FaArrowRightLong, FaPlus } from "react-icons/fa6";
-import { product } from "../../utils/data";
+import { FaHeart, FaArrowRightLong, FaPlus, FaArrowRight } from "react-icons/fa6";
+import { event, product } from "../../utils/data";
+import { GiTicket } from "react-icons/gi";
 import { LuPlus } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const ExploreScreen = () => {
   return (
@@ -31,14 +33,6 @@ const ExploreScreen = () => {
               facere.
             </div>
             <div className={css.price}>Price $345.50</div>
-            <div className={css.varian}>
-              <span>Quantity</span>
-              <div className={css.qty}>
-                <button>-</button>
-                <p>1</p>
-                <button>+</button>
-              </div>
-            </div>
             <div className={css.buttons}>
               <a href="" className={`flexCenter ${css.savebtn}`}>
                 <FaHeart className={css.saveIcon} size={15}/>
@@ -58,7 +52,7 @@ const ExploreScreen = () => {
             return (
               <div className={`${css.productcard}`} key={i}>
                 <img src={item.img} alt={item.title} className={css.img} />
-                <span className={css.title}>{item.title}</span>
+                <p className={css.title}>{item.title}</p>
                 <div className={css.pricerates}>
                   <span className={css.price}>Price  ${item.price}</span>
                   <div className={` ${css.rates}`}>
@@ -79,13 +73,69 @@ const ExploreScreen = () => {
         </div>
         <div className={css.exprCategory}>
           <div className={css.title}>
-            <span className={`primaryText ${css.label}`}>Explore Pupular Categories</span>
+            <span className={`primaryText ${css.label}`}>Explore Popular Categories</span>
             <div className={css.seeAll}>
               <span>See all</span>
-              <FaArrowRightLong size={20}/>
+              <Link to='#' className={css.btn}>
+              <FaArrowRightLong size={15}/>
+              </Link>
             </div>
           </div>
+
+          <div className={css.card}>
+          <div className={css.topbrands}>
+            <div className={css.brands}>
+              <img src="./shoe2.jpg" alt=""/>
+              <img src="./shoe2.jpg" alt=""/>
+              <img src="./shoe2.jpg" alt=""/>
+              <img src="./shoe2.jpg" alt=""/>
+            </div>
+            <div className={css.line}/>
+            <div className={css.detail}>
+              <span>Popular top 10 brands</span>
+              <span>540+ Orders and reviews</span>
+            </div>
+          </div>
+          <div className={css.promosCard}>
+            
+            <div className={css.promoTitle}>
+              <span>
+              New promo!
+              </span>
+              <div className={css.line}/>
+              <span>
+              <div className={css.promoImg}>
+            <GiTicket size={25} />
+            </div>
+              12:12 Road to New Year promo..
+              </span>
+            </div>
+          </div>
+
+          </div>
+
         </div>
+        </div>
+
+        <div className={css.rightSide}>
+          <div className={css.event}>
+            <span>Hot deals from top sales</span>
+            <div className={css.imgStack}>
+              {event.map((img, i) =>{
+                return(
+                  <img src={img.img} alt="" className={css.img} />
+
+                )
+              })}
+
+            </div>
+            <div className={css.btnAds}>
+              <a href="">
+              <span>Get promo</span>
+              <FaArrowRight />
+              </a>
+            </div>
+          </div>
         </div>
 
 
