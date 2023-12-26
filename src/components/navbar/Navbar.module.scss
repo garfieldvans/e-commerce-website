@@ -1,0 +1,114 @@
+@import "../../styles/global/contans.scss";
+
+.wrapper {
+  background: #fafafa;
+  position: fixed;
+  left: 13rem;
+  right: 0;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    align-items: center;
+  }
+  .slogan {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    margin-left: 3rem;
+    color: $black;
+
+    :nth-child(1){
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+      :nth-child(2){
+        font-size: 14px;
+        margin-top: 0.2rem;
+      }
+    
+  }
+
+  .search {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: #fff;
+    border-radius: 7px;
+    padding-left: 0.5rem;
+    padding-right: 1.5rem;
+    box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
+
+    .searchIcon {
+      color: $themeColor;
+    }
+
+    input {
+      border: none;
+      background: #fff;
+      height: 2rem;
+      outline: none;
+      padding-left: 0.5rem;
+    }
+    .filter {
+      rotate: 90deg;
+      align-items: center;
+      cursor: pointer;
+
+      .filterIcon {
+        color: $themeColor;
+      }
+    }
+  }
+
+  .rightSide {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    .message {
+      background: #e8fcff;
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+      padding-top: 0.2rem;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .msg {
+        color: $themeColor;
+      }
+    }
+
+    .notif {
+      background: #E8FCFF;
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+      padding-top: 0.2rem;
+      border-radius: 10px;
+      align-self: center;
+      justify-content: center;
+      box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
+      cursor: pointer;
+      .notifIcon {
+        color: $themeColor;
+      }
+    }
+
+    .profile {
+      max-width: 2rem;
+      max-height: 2rem;
+      cursor: pointer;
+      .img {
+        align-self: center;
+        border-radius: 10px;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@import "../../styles/global/contans.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@400;500;600;700&display=swap");
+
+.wrapper {
+  background: white;
+  max-width: 13rem;
+  padding-bottom: 1.5rem;
+  border-bottom-right-radius: 15px;
+  position: fixed;
+  z-index: 2000;
+
+  box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
+
+  .container {
+    padding-top: 0.7rem;
+    display: flex;
+    flex-direction: column;
+
+    .topContent {
+      display: flex;
+      flex-direction: row;
+      text-transform: uppercase;
+      align-items: center;
+
+      > :nth-child(2) {
+        color: $themeColor;
+      }
+
+      span {
+        font-size: 28px;
+      }
+
+      .logoIcons {
+        background: #e8fcff;
+        padding: 0.3rem;
+        border-radius: 10px;
+        margin-right: 1rem;
+        .logos {
+          color: $themeColor;
+          filter: drop-shadow(2px 0 5px #009393);
+        }
+      }
+    }
+
+    .menuList {
+        margin-bottom: 10px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+
+        li {
+          font-size: 16px;
+          padding-left: 0.5rem;
+          a {
+            display: flex;
+            gap: 1rem;
+            color: inherit;
+            text-decoration: none;
+            align-items: center;
+          }
+
+          &:hover {
+            color: $themeColor;
+            font-weight: 700;
+            font-size: 18px;
+            transition: ease-in-out, 200ms;
+          }
+        }
+      }
+    }
+
+    .groundContent {
+      background: #bfecff;
+      border-radius: 15px;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    //   margin-bottom: 1rem;
+
+      .plus {
+        .btnImg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        font-size: 14px;
+        color: $themeColor;
+        text-align: center;
+        font-family: 'Roboto';
+        line-height: 1rem;
+      }
+
+      .button{
+        margin-top: 0.5rem;
+        background: #fff;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3rem;
+        text-align: center;
+        border-radius: 15px;
+
+        a{
+          align-self: center;
+            text-decoration: none;
+            font-size: 13px;
+            color: $themeColor;
+        }
+
+      }
+    }
+  }
+}
