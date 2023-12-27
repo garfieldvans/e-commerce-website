@@ -1,6 +1,12 @@
 @import "../../../styles/global/contans.scss";
 
 .wrapper {
+  @media (max-width: $sm) {
+    left: 0;
+  }
+  @media (min-width: $sm) and (max-width: $mdr) {
+    left: 11rem;
+  }
   position: relative;
   top: 4rem;
   left: 15rem;
