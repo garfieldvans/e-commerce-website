@@ -2,6 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@400;500;600;700&display=swap");
 
 .wrapper {
+  @media (max-width: 450px){
+    display: none;
+    position: unset;
+  }
+  @media (max-width: 800px){
+    max-width: 10rem;
+  }
+  
   background: white;
   max-width: 13rem;
   padding-bottom: 1.5rem;
@@ -31,6 +39,9 @@
       }
 
       .logoIcons {
+        @media (max-width: 800px){
+          display: none;
+        }
         background: #e8fcff;
         padding: 0.3rem;
         border-radius: 10px;
@@ -72,6 +83,9 @@
     }
 
     .groundContent {
+      @media (max-width: 800px){
+    max-width: 90%;
+      }
       background: #bfecff;
       border-radius: 15px;
       padding-bottom: 1rem;

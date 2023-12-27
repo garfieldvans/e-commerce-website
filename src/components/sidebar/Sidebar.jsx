@@ -45,12 +45,6 @@ const Sidebar = () => {
                 History
               </Link>
             </li>
-            <li>
-              <Link to="profile">
-                <MdOutlinePersonOutline size={22} />
-                Profile
-              </Link>
-            </li>
           </ul>
         </div>
 
