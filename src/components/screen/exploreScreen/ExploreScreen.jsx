@@ -40,7 +40,7 @@ const ExploreScreen = () => {
                 eveniet obcaecati tempore reiciendis ab quae ipsam mollitia
                 facere.
               </div>
-              <div className={css.price}>Price $345.50</div>
+              <div className={css.price}>Price : $345.50</div>
               <div className={css.buttons}>
                 <a href="" className={`flexCenter ${css.savebtn}`}>
                   <FaHeart className={css.saveIcon} size={15} />
@@ -58,14 +58,13 @@ const ExploreScreen = () => {
           <div className={`primaryText ${css.sectionTitle2}`}>
             <p>New Product</p>
             <div className={css.seeAll}>
-                <span>See all</span>
                 <Link to="#" className={css.btn}>
+                <span>See all</span>
                   <FaArrowRightLong size={15} />
                 </Link>
               </div>
           </div>
           <Carousel responsive={responsive} className={css.slider}>
-          {/* <div className={css.product}> */}
             {product.map((item, i) => {
               console.log(item);
               return (
@@ -88,14 +87,13 @@ const ExploreScreen = () => {
                 </div>
               );
             })}
-          {/* </div> */}
             </Carousel>
           <div className={css.exprCategory}>
             <div className={css.title}>
               <span className={`primaryText ${css.label}`}>Hot Promos</span>
               <div className={css.seeAll}>
-                <span>See all</span>
                 <Link to="#" className={css.btn}>
+                <span>See all</span>
                   <FaArrowRightLong size={15} />
                 </Link>
               </div>
