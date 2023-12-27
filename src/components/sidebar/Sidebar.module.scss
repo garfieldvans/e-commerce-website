@@ -101,10 +101,10 @@
 
           a {
             @media (max-width: $sm) {
-              padding-top: 1rem;
+              padding-top: 0.5rem;
               padding-left: 1rem;
               padding-right: 1rem;
-              padding-bottom: 0.5rem;
+              
               color: #fff;
 
               &.active {
@@ -113,6 +113,7 @@
                 border-bottom-right-radius: 1rem;
                 color: #009393;
                 font-weight: bold;
+                padding-bottom: 0.7rem;
               }
             }
             display: flex;
