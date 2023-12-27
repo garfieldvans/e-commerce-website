@@ -21,7 +21,7 @@ const Router = () => {
       <Navbar/>
             <Routes >
                 <Route path='/' element={<ExploreScreen/>}/>
-                <Route path='/saved' element={<SavedScreen/>}/>
+                <Route path='/wishlist' element={<SavedScreen/>}/>
                 <Route path='/cart' element={<CartScreen/>}/>
                 <Route path='/history' element={<HistoryScreen/>}/>
                 <Route path='/profile' element={<ProfileScreen/>}/>

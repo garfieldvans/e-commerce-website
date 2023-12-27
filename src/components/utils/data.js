@@ -1,3 +1,10 @@
+import { FiCircle } from "react-icons/fi";
+import { LuPlus } from "react-icons/lu";
+import { IoCartOutline } from "react-icons/io5";
+import { MdHistory, MdOutlinePersonOutline } from "react-icons/md";
+import { FaRegCompass, FaRegHeart } from "react-icons/fa";
+
+
 export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -78,5 +85,28 @@ export const promos = [
   {
     name: 'promo3',
     img : './promo3.jpg',
+  },
+]
+
+export const menuList = [
+  {
+    name: 'Explore',
+    icon : FaRegCompass,
+    link: "/"
+  },
+  {
+    name: 'Wishlist',
+    icon : FaRegHeart,
+    link :'wishlist'
+  },
+  {
+    name: 'Cart',
+    icon : IoCartOutline,
+    link : 'cart'
+  },
+  {
+    name: 'History',
+    icon : MdHistory,
+    link : 'history'
   },
 ]

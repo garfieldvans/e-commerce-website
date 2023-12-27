@@ -2,17 +2,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@400;500;600;700&display=swap");
 
 .wrapper {
-  @media (max-width: $sm){
-    display: none;
-    position: unset;
+  @media (max-width: $sm) {
+    bottom: 0;
+    width: 100%;
+    background: $themeColor;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0;
+    border-bottom-right-radius: 0;
   }
-  @media (min-width: $md) and (max-width: $mdr){
+  @media (min-width: $md) and (max-width: $mdr) {
     max-width: 10rem;
   }
-  
+
   background: white;
-  max-width: 13rem;
+  width: 13rem;
   padding-bottom: 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
   border-bottom-right-radius: 15px;
   position: fixed;
   z-index: 2000;
@@ -20,11 +27,18 @@
   box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
 
   .container {
+    @media (max-width: $sm) {
+      padding-top: 0;
+    }
     padding-top: 0.7rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .topContent {
+      @media (max-width: $sm) {
+        display: none;
+      }
       justify-content: center;
       display: flex;
       flex-direction: row;
@@ -40,7 +54,7 @@
       }
 
       .logoIcons {
-        @media (min-width: $md) and (max-width: $mdr){
+        @media (min-width: $md) and (max-width: $mdr) {
           display: none;
         }
         background: #e8fcff;
@@ -55,22 +69,63 @@
     }
 
     .menuList {
-        margin-bottom: 10px;
+      @media (max-width: $sm) {
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+      width: 100%;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 1rem;
+      padding-top: 2rem;
       ul {
+        @media (max-width: $sm) {
+          padding-left: 0;
+          justify-content: space-between;
+          flex-direction: row;
+          list-style: none;
+          gap: 0;
+        }
         display: flex;
         flex-direction: column;
         gap: 2rem;
         list-style: none;
+        padding-left: 1.5rem;
 
         li {
+          @media (max-width: $sm) {
+            padding-left: 0;
+          }
           font-size: 16px;
           padding-left: 0.5rem;
+
           a {
+            @media (max-width: $sm) {
+              padding-top: 1rem;
+              padding-left: 1rem;
+              padding-right: 1rem;
+              padding-bottom: 0.5rem;
+              color: #fff;
+
+              &.active {
+                background: white;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                color: #009393;
+                font-weight: bold;
+              }
+            }
             display: flex;
             gap: 1rem;
-            color: inherit;
+            color: #009393;
             text-decoration: none;
             align-items: center;
+
+            p {
+              @media (max-width: $sm) {
+                display: none;
+              }
+            }
           }
 
           &:hover {
@@ -84,9 +139,14 @@
     }
 
     .groundContent {
-      @media (min-width: $md){
-    max-width: 90%;
+      @media (max-width: $sm) {
+        display: none;
       }
+      @media (min-width: $md) {
+        max-width: 90%;
+      }
+      display: flex;
+      flex-direction: column;
       background: #bfecff;
       border-radius: 15px;
       padding-bottom: 1rem;
@@ -109,11 +169,11 @@
         font-size: 14px;
         color: $themeColor;
         text-align: center;
-        font-family: 'Roboto';
+        font-family: "Roboto";
         line-height: 1rem;
       }
 
-      .button{
+      .button {
         margin-top: 0.5rem;
         background: #fff;
         justify-content: center;
@@ -122,13 +182,12 @@
         text-align: center;
         border-radius: 15px;
 
-        a{
+        a {
           align-self: center;
-            text-decoration: none;
-            font-size: 13px;
-            color: $themeColor;
+          text-decoration: none;
+          font-size: 13px;
+          color: $themeColor;
         }
-
       }
     }
   }
