@@ -1,52 +1,63 @@
 @import "../../../styles/global/contans.scss";
 
 .wrapper {
-  @media (max-width: 648px), (max-width: 300px) {
+  @media (max-width: $sm) {
     left: 0;
   }
-  // @media (max-width: 800px){
-  //   padding-left: 1rem;
-  // }
+  @media (min-width: $sm) and (max-width: $mdr) {
+    left: 11rem;
+  }
   position: relative;
   top: 4.5rem;
   left: 15rem;
   right: 0;
   flex: 1;
   .container {
-    @media (max-width: 648px), (max-width: 300px) {
+    @media (max-width: $sm) {
       flex-direction: column-reverse;
       gap: 1rem;
+    }
+    @media (min-width: $md) and (max-width: $mdr) {
+      gap: 0.5rem;
     }
     display: flex;
     width: 100%;
     gap: 2rem;
 
     .leftSide {
-      @media (max-width: 648px), (max-width: 300px) {
+      @media (max-width: $sm) {
         max-width: 100%;
       }
+
+      @media (min-width: $md) and (max-width: $mdr) {
+        max-width: 47%;
+      }
+
       display: flex;
       flex-direction: column;
       max-width: 50%;
       gap: 0.5rem;
 
       .sectionTitle {
-        @media (max-width: 648px), (max-width: 300px) {
+        @media (max-width: $sm), (min-width: $md) and (max-width: $mdr) {
           margin-top: 0.5rem;
+          font-size: 20px;
         }
         font-size: 24px;
         color: $themeColor;
       }
 
       .hotCard {
-        @media (max-width: 648px), (max-width: 300px) {
+        @media (max-width: $sm) {
           max-width: 100%;
           height: auto;
-          // flex-direction: column;
           gap: 0.5rem;
         }
+        @media (min-width: $md) and (max-width: $mdr) {
+          max-width: 95%;
+        }
         max-width: 90%;
-        max-height: 400px;
+        max-height: 180px;
         background: #fff;
         border-radius: 1rem;
         display: flex;
@@ -57,13 +68,19 @@
         box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
 
         .productImg {
-          @media (max-width: 648px), (max-width: 300px) {
+          @media (max-width: $sm) {
             max-width: 40%;
           }
+          @media (min-width: $md) and (max-width: $mdr) {
+            max-width: 20%;
+          }
 
-          .img {
-            @media (max-width: 648px), (max-width: 300px) {
+          img {
+            @media (max-width: $sm) {
               object-fit: fill;
+            }
+            @media (min-width: $md) and (max-width: $mdr) {
+              object-fit: contain;
             }
             width: 90%;
             height: auto;
@@ -72,12 +89,21 @@
         }
 
         .detail {
+          @media (min-width: $md) and (max-width: $mdr) {
+            max-width: 60%;
+          }
           display: flex;
           flex-direction: column;
           flex-wrap: wrap;
           gap: 0.2rem;
 
           span {
+            @media (max-width: $sm) {
+              font-size: 16px;
+            }
+            @media (min-width: $md) and (max-width: $mdr) {
+              font-size: 16px;
+            }
             font-size: 20px;
           }
 
@@ -86,6 +112,13 @@
             align-items: center;
 
             p {
+              @media (max-width: $sm) {
+                font-size: 12px;
+              }
+              @media (min-width: $md) and (max-width: $mdr) {
+                font-size: 12px;
+                display: none;
+              }
               font-size: 13px;
               color: #5c5c5c;
               margin-left: 0.5rem;
@@ -99,7 +132,7 @@
           display: -webkit-box;
           -webkit-box-orient: vertical;
           overflow: hidden;
-          -webkit-line-clamp: 2; /* Limit to 2 lines */
+          -webkit-line-clamp: 2;
           max-height: 3em;
         }
 
@@ -112,7 +145,7 @@
         }
 
         .buttons {
-          @media (max-width: 648px), (max-width: 300px) {
+          @media (max-width: $sm), (min-width: $md) and (max-width: $mdr) {
             max-width: 100%;
           }
           display: flex;
@@ -137,7 +170,10 @@
           }
           .addcart {
             .cartIcon {
-              @media (max-width: 648px), (max-width: 300px) {
+              @media (max-width: $sm) {
+                display: flex;
+              }
+              @media (min-width: $md) and (max-width: $mdr) {
                 display: flex;
               }
 
@@ -145,7 +181,10 @@
             }
 
             p {
-              @media (max-width: 648px), (max-width: 300px) {
+              @media (max-width: $sm) {
+                display: none;
+              }
+              @media (min-width: $md) and (max-width: $mdr) {
                 display: none;
               }
             }
@@ -177,36 +216,80 @@
       }
 
       .sectionTitle2 {
-        margin-top: 2rem;
+        @media (min-width: $md) and (max-width: $mdr) {
+          justify-content: space-between;
+        }
+        @media (max-width: $sm) {
+          justify-content: space-between;
+        }
+
+        margin-top: 1rem;
         font-size: 20px;
         color: $themeColor;
+        display: flex;
+        align-items: end;
+        gap: 1rem;
+
+        .seeAll {
+          display: flex;
+          color: #5c5c5c;
+          font-size: 14px;
+          gap: 0.5rem;
+          align-items: center;
+
+          .btn {
+            display: flex;
+          }
+        }
       }
 
-      .product {
-        @media (max-width: 648px), (max-width: 300px) {
-          // flex-direction: column;
+      .slider {
+        @media (max-width: $sm) {
+          width: 100%;
           flex-wrap: wrap;
           max-height: fit-content;
+          margin-top: -0.5rem;
+        }
+
+        @media (min-width: $md) and (max-width: $mdr) {
+          width: 100%;
+          flex-wrap: wrap;
+          max-height: fit-content;
+          margin-top: -0.5rem;
         }
         display: flex;
         flex-direction: row;
         gap: 1.5rem;
-        max-height: 240px;
+        max-height: 260px;
+        text-align: start;
+        background: #000;
 
+        display: flex;
+        height: 270px;
+        width: 90%;
+        background-color: transparent;
         .productcard {
-          @media (max-width: 648px), (max-width: 300px) {
-            width: calc(50% - 10px); /* Two items per row with some margin */
+          @media (max-width: $sm) {
+            width: calc(50% - 10px);
             margin: 5px;
+            width: 110px;
+            height: 240px;
+          }
+          @media (min-width: $md) and (max-width: $mdr) {
+            width: calc(20%);
+            width: 110px;
+            margin: 5px;
+            height: 240px;
           }
           display: flex;
           flex-direction: column;
-          height: 240px;
+          height: 250px;
           width: 140px;
-          max-width: 140px;
+          // max-width: 20%;
           // padding: 0.7rem;
           background: #fff;
           border-radius: 0.5rem;
-          box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.13);
 
           .img {
             border-top-right-radius: 0.5rem;
@@ -222,7 +305,7 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            -webkit-line-clamp: 2; /* Limit to 2 lines */
+            -webkit-line-clamp: 2;
             max-height: 3em;
             font-weight: 600;
             font-size: 14px;
@@ -280,14 +363,23 @@
       }
 
       .exprCategory {
-        
+        @media (max-width: $sm) {
+          margin-top: 0;
+        }
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
+        margin-top: 1rem;
 
         .title {
-          margin-top: 1rem;
+          @media (max-width: $sm) {
+            justify-content: space-between;
+          }
+          @media (min-width: $md) and (max-width: $mdr) {
+            justify-content: space-between;
+          }
           display: flex;
+          // background: #000;
           gap: 1rem;
           align-items: center;
           text-align: center;
@@ -315,92 +407,35 @@
         }
 
         .card {
-          @media (max-width: 648px), (max-width: 300px) {
-            flex-direction: column;
-            clear: both;
-          }
           display: flex;
-          gap: 2rem;
-          .topbrands {
-            display: flex;
-            gap: 1rem;
-            background: #fff;
-            max-width: 430px;
-            padding: 1rem;
-            border-radius: 1rem;
-            align-items: center;
-            box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
+          gap: 0.5rem;
 
-            .brands {
+          .promoCard {
+            @media (max-width: $sm) {
+              width: 50%;
+            }
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 25%;
+            max-width: 140px;
+            background: #009393;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            justify-content: center;
+            align-items: center;
+
+            a {
               display: flex;
+              text-decoration: none;
+              justify-content: center;
+              align-items: center;
 
               img {
-                width: 50px;
-                height: 50px;
-                border-radius: 100%;
-                margin-right: -0.5rem;
-              }
-            }
-
-            .line {
-              margin-left: 0.5rem;
-              height: 90%;
-              background: #c2c2c2;
-              border-radius: 2rem;
-              width: 2px;
-            }
-
-            .detail {
-              display: flex;
-              flex-direction: column;
-              gap: 0.5rem;
-              :nth-child(1) {
-                font-size: 16px;
-                font-weight: 600;
-              }
-              :nth-child(2) {
-                font-size: 14px;
-                color: #5c5c5c;
-              }
-            }
-          }
-
-          .promosCard {
-            display: flex;
-            gap: 1rem;
-            background: #fff;
-            max-width: 430px;
-            padding: 1rem;
-            border-radius: 1rem;
-            align-items: center;
-            box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
-
-            .promoTitle {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              gap: 0.4rem;
-
-              :nth-child(1) {
-                font-size: 16px;
-                font-weight: 600;
-              }
-
-              .line {
-                width: 95%;
-                border-radius: 999px;
-                background: #c2c2c2;
-                height: 2px;
-                margin-bottom: 0.3rem;
-              }
-
-              :nth-child(3) {
-                display: flex;
-                align-items: center;
-                color: #009393;
-                gap: 1rem;
-                font-weight: 600;
-                font-size: 17px;
+                border-radius: 0.5rem;
+                width: 100%;
+                height: auto;
+                object-fit: fill;
               }
             }
           }
@@ -409,12 +444,14 @@
     }
 
     .rightSide {
-      @media (max-width: 648px), (max-width: 300px) {
+      @media (max-width: $sm) {
         width: 100%;
+      }
+      @media (min-width: $md) and (max-width: $mdr) {
+        width: 23%;
       }
       display: flex;
       justify-content: center;
-      // background: #000;
       width: 25%;
 
       .event {
@@ -433,6 +470,10 @@
         box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
 
         span {
+          @media (min-width: $md) and (max-width: $mdr) {
+            font-size: 18px;
+            text-align: start;
+          }
           font-size: 20px;
           font-weight: 700;
           color: #016170;
@@ -446,6 +487,9 @@
           justify-content: center;
 
           .img {
+            @media (min-width: $md) and (max-width: $mdr) {
+              height: 100px;
+            }
             margin-top: auto;
             object-fit: cover;
             height: 120px;

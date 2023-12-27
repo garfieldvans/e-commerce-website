@@ -14,7 +14,7 @@
 }
 
 .paddings {
-  @media (min-width: #{$xsm-from}) and (max-width: #{$xsm-to}), (max-width: $sm), (max-width: $md) {
+  @media (max-width: $sm) {
     padding: 1rem;
   }
 
@@ -98,9 +98,6 @@
 }
 
 .primaryText {
-  @media (min-width: #{$xsm-from}) and (max-width: #{$xsm-to}), (max-width: $sm), (max-width: $md) {
-    font-size: 1.7rem;
-  }
   font-size: 2rem;
   font-weight: bold;
 }

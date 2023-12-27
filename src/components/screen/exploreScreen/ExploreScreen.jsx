@@ -1,5 +1,7 @@
 import React from "react";
 import css from "./Explore.module.scss";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { IoMdStar } from "react-icons/io";
 import {
   FaHeart,
@@ -7,9 +9,7 @@ import {
   FaPlus,
   FaArrowRight,
 } from "react-icons/fa6";
-import { event, product } from "../../utils/data";
-import { GiTicket } from "react-icons/gi";
-import { LuPlus } from "react-icons/lu";
+import { event, product, promos, responsive } from "../../utils/data";
 import { Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 
@@ -46,10 +46,8 @@ const ExploreScreen = () => {
                   <FaHeart className={css.saveIcon} size={15} />
                 </a>
                 <a href="" className={`flexCenter ${css.addcart}`}>
-                <IoCartOutline className={css.cartIcon}/>
-                  <p>
-                    Add to cart
-                    </p>
+                  <IoCartOutline className={css.cartIcon} />
+                  <p>Add to cart</p>
                 </a>
                 <a href="" className={`flexCenter ${css.buynow}`}>
                   Buy now
@@ -59,8 +57,15 @@ const ExploreScreen = () => {
           </div>
           <div className={`primaryText ${css.sectionTitle2}`}>
             <p>New Product</p>
+            <div className={css.seeAll}>
+                <span>See all</span>
+                <Link to="#" className={css.btn}>
+                  <FaArrowRightLong size={15} />
+                </Link>
+              </div>
           </div>
-          <div className={css.product}>
+          <Carousel responsive={responsive} className={css.slider}>
+          {/* <div className={css.product}> */}
             {product.map((item, i) => {
               console.log(item);
               return (
@@ -83,12 +88,11 @@ const ExploreScreen = () => {
                 </div>
               );
             })}
-          </div>
+          {/* </div> */}
+            </Carousel>
           <div className={css.exprCategory}>
             <div className={css.title}>
-              <span className={`primaryText ${css.label}`}>
-                Explore Popular Categories
-              </span>
+              <span className={`primaryText ${css.label}`}>Hot Promos</span>
               <div className={css.seeAll}>
                 <span>See all</span>
                 <Link to="#" className={css.btn}>
@@ -98,31 +102,15 @@ const ExploreScreen = () => {
             </div>
 
             <div className={css.card}>
-              <div className={css.topbrands}>
-                <div className={css.brands}>
-                  <img src="./shoe2.jpg" alt="" />
-                  <img src="./shoe2.jpg" alt="" />
-                  <img src="./shoe2.jpg" alt="" />
-                  <img src="./shoe2.jpg" alt="" />
-                </div>
-                <div className={css.line} />
-                <div className={css.detail}>
-                  <span>Popular top 10 brands</span>
-                  <span>540+ Orders and reviews</span>
-                </div>
-              </div>
-              <div className={css.promosCard}>
-                <div className={css.promoTitle}>
-                  <span>New promo!</span>
-                  <div className={css.line} />
-                  <span>
-                    <div className={css.promoImg}>
-                      <GiTicket size={25} />
-                    </div>
-                    12:12 Road to New Year promo..
-                  </span>
-                </div>
-              </div>
+              {promos.map((item, i) => {
+                return (
+                  <div className={css.promoCard} key={i}>
+                    <a href="">
+                      <img src={item.img} alt="" className={css.img} />
+                    </a>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

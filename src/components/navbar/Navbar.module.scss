@@ -1,30 +1,30 @@
 @import "../../styles/global/contans.scss";
 
 .wrapper {
-  @media (max-width: 648px), (max-width: 300px) {
-    // position: fi;
+  @media (max-width: $sm) {
     left: 0;
-    background: white;
+    background: #fff;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 15%);
   }
-  @media (min-width: 768px){
-    left: 10rem;
-    background: white;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 15%);
+
+  @media (min-width: $md) and (max-width: $mdr){
+    left: 9rem;
+    background: #fff;
   }
   background: #fafafa;
   position: fixed;
-  left: 13rem;
+  left: 9rem;
   right: 0;
   z-index: 1000;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 15%);
 
   .container {
-    @media (max-width: 648px), (min-width: 300px) {
-      display: flex;
+    @media (max-width: $sm) {
       gap: 0.5rem;
     }
-    @media (max-width: 800px){
+    @media (min-width: $md) and (max-width: $mdr){
       padding-left: 1rem;
+      padding-right: 1rem;
     }
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,11 @@
     align-items: center;
   }
   .slogan {
-    @media (max-width: 648px), (max-width: 300px),(max-width: 768px) {
+    @media (max-width: $sm) {
+      display: none;
+    }
+
+    @media (min-width: $md) and (max-width: $mdr){
       display: none;
     }
     padding-left: 1.5rem;
@@ -54,10 +58,14 @@
   }
 
   .search {
-    @media (max-width: 648px), (max-width: 300px) {
-      width: 70%;
+    @media (max-width: $sm) {
+      width: 65%;
       box-shadow: none;
       background: #f1f1f1;
+      justify-content: space-between;
+    }
+    @media (min-width: $md) and (max-width: $mdr){
+      width: 60%;
     }
     width: 40%;
     display: flex;
@@ -74,12 +82,13 @@
     }
 
     input {
-      @media (max-width: 648px), (max-width: 300px) {
-        max-width: 100%;
+      @media (max-width: $sm) {
+        max-width: 85%;
+        font-size: 14px;
         background: #f1f1f1;
       }
-      // max-width: 80%;
-      width: 100%;
+
+      width: 85%;
       border: none;
       background: #fff;
       height: 2rem;
@@ -87,7 +96,7 @@
       padding-left: 0.5rem;
     }
     .filter {
-      @media (max-width: 648px), (max-width: 300px) {
+      @media (max-width: $sm) {
         display: none;
       }
       rotate: 90deg;
@@ -101,7 +110,7 @@
   }
 
   .rightSide {
-    @media (max-width: 648px), (max-width: 300px) {
+    @media (max-width: $sm) {
       gap: 0.5rem;
     }
     display: flex;
@@ -139,7 +148,7 @@
     }
 
     .menus {
-      @media (max-width: 648px), (max-width: 300px) {
+      @media (max-width: $sm) {
         display: flex;
         background: #e8fcff;
         padding-left: 0.2rem;
@@ -158,7 +167,7 @@
     }
 
     .profile {
-      @media (max-width: 648px), (max-width: 300px) {
+      @media (max-width: $sm) {
         display: none;
       }
       max-width: 2rem;
