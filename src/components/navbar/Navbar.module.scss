@@ -13,7 +13,8 @@
   }
   background: #fafafa;
   position: fixed;
-  left: 9rem;
+  // left: 13rem;
+  width: 100%;
   right: 0;
   z-index: 1000;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 15%);
@@ -21,6 +22,8 @@
   .container {
     @media (max-width: $sm) {
       gap: 0.5rem;
+      padding-left: 0;
+      padding-right: 0;
     }
     @media (min-width: $md) and (max-width: $mdr){
       padding-left: 1rem;
@@ -31,6 +34,40 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .topContent {
+    @media (max-width: $sm) {
+      display: none;
+    }
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    align-items: center;
+
+    > :nth-child(2) {
+      color: $themeColor;
+    }
+
+    span {
+      font-size: 28px;
+    }
+
+    .logoIcons {
+      @media (min-width: $md) and (max-width: $mdr) {
+        display: none;
+      }
+      background: #e8fcff;
+      padding: 0.3rem;
+      border-radius: 10px;
+      margin-right: 1rem;
+      .logos {
+        color: $themeColor;
+        filter: drop-shadow(2px 0 5px #009393);
+      }
+    }
   }
   .slogan {
     @media (max-width: $sm) {
@@ -119,10 +156,10 @@
     justify-content: space-between;
 
     .message {
+      display: flex;
       background: #e8fcff;
-      padding-left: 0.2rem;
-      padding-right: 0.2rem;
-      padding-top: 0.2rem;
+      width: 35px;
+      height: 35px;
       border-radius: 10px;
       align-items: center;
       justify-content: center;
@@ -133,16 +170,17 @@
     }
 
     .notif {
+      display: flex;
       background: #e8fcff;
-      padding-left: 0.2rem;
-      padding-right: 0.2rem;
-      padding-top: 0.2rem;
+      width: 35px;
+      height: 35px;
       border-radius: 10px;
-      align-self: center;
+      align-items: center;
       justify-content: center;
       box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
       cursor: pointer;
       .notifIcon {
+        align-self: center;
         color: $themeColor;
       }
     }
@@ -150,18 +188,17 @@
     .menus {
       @media (max-width: $sm) {
         display: flex;
-        background: #e8fcff;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        padding-top: 0.2rem;
-        border-radius: 10px;
-        align-self: center;
-        justify-content: center;
-        box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
-        cursor: pointer;
       }
+      background: #e8fcff;
+      width: 35px;
+      height: 35px;
+      border-radius: 10px;
+      align-self: center;
+      justify-content: center;
+      box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.13);
       display: none;
       .menuIcon {
+        align-self: center;
         color: $themeColor;
       }
     }

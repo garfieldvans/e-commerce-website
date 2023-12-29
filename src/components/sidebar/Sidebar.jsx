@@ -11,13 +11,6 @@ const Sidebar = () => {
   return (
     <div className={css.wrapper}>
       <div className={` ${css.container}`}>
-        <div className={` ${css.topContent}`}>
-          <div className={css.logoIcons}>
-            <PiSneakerMoveLight size={35} className={css.logos} />
-          </div>
-          <span className="primaryText">Shoe</span>
-          <span className="primaryText">Lit.</span>
-        </div>
         <div className={css.menuList}>
           <ul>
           {menuList.map((menu, i) => {

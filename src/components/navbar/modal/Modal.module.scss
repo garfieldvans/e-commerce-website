@@ -2,23 +2,32 @@
 
 .wrapper {
   @media (max-width: $sm) {
-    left: 0;
+    justify-content: center;
   }
-  @media (min-width: $sm) and (max-width: $mdr) {
-    left: 11rem;
-  }
-  position: relative;
-  top: 4rem;
-  left: 15rem;
-  right: 0;
-  background: tomato;
-  flex-direction: column;
-  width: 78%;
+  
+  position: fixed;
+  display: none;
+  justify-content: end;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  top: 3.6rem;
+  background: #3535358a;
 
+  &.open{
+    display: flex;
+  }
   .modal {
+    @media (max-width: $sm) {
+      width: 95%;
+      margin-right: 0;
+    }
+    margin-right: 10px;
+    margin-top: 0.5rem;
+    max-height: 360px;
+    z-index: 9999;
     background: #fff;
-    width: 25%;
-    // height: 17rem;
+    width: 23%;
     display: flex;
     flex-direction: column;
     padding: 0.8rem;
