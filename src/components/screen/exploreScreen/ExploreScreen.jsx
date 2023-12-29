@@ -58,11 +58,11 @@ const ExploreScreen = () => {
           <div className={`primaryText ${css.sectionTitle2}`}>
             <p>New Product</p>
             <div className={css.seeAll}>
-                <Link to="#" className={css.btn}>
+              <Link to="#" className={css.btn}>
                 <span>See all</span>
-                  <FaArrowRightLong size={15} />
-                </Link>
-              </div>
+                <FaArrowRightLong size={15} />
+              </Link>
+            </div>
           </div>
           <Carousel responsive={responsive} className={css.slider}>
             {product.map((item, i) => {
@@ -87,13 +87,13 @@ const ExploreScreen = () => {
                 </div>
               );
             })}
-            </Carousel>
+          </Carousel>
           <div className={css.exprCategory}>
             <div className={css.title}>
               <span className={`primaryText ${css.label}`}>Hot Promos</span>
               <div className={css.seeAll}>
                 <Link to="#" className={css.btn}>
-                <span>See all</span>
+                  <span>See all</span>
                   <FaArrowRightLong size={15} />
                 </Link>
               </div>
@@ -127,6 +127,29 @@ const ExploreScreen = () => {
                 <FaArrowRight />
               </a>
             </div>
+          </div>
+          <div className={css.dailyDeals}>
+            <div className={css.head}>
+              <span className="primaryText">Daily Deals</span>
+              <a href="#" className={css.link}>
+                <p>See All</p>
+                <FaArrowRightLong size={15} />
+              </a>
+            </div>
+            {product.map((prod, i) => {
+              return (
+                <div className={css.body} key={i}>
+                  <div className={css.img}>
+                    <img src={prod.img} alt={prod.title} />
+                  </div>
+                  <div className={css.detail}>
+                    <p className="primaryText">{prod.title}</p>
+                    <p>{prod.sales} Sales</p>
+                  </div>
+                  <div className={css.price}>${prod.price}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

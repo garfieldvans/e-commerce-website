@@ -32,36 +32,41 @@ export const product = [
     img: "./shoe1.jpg",
     title: "Shozie Stylish Shoes Sneakers For Women",
     price: 300.20,
-    rating: 4.9
+    rating: 4.9,
+    sales: 400
   },
   {
     id: 2,
     img: "./shoe2.jpg",
     title: "White Sneakers for Men by RED TAPE",
     price: 300.20,
-    rating: 5.0
+    rating: 5.0,
+    sales: 305,
   },
   {
     id: 3,
     img: "./shoe3.jpg",
     title: "YSCROWD Men's Sneakers Comfort",
     price: 320,
-    rating: 4.0
+    rating: 4.0,
+    sales : 600
   },
   {
     id: 4,
     img: "./shoe4.jpg",
     title: "Shozie Stylish Shoes Sneakers For Women",
     price: 380.50,
-    rating: 4.9
+    rating: 4.9,
+    sales: 230
   },
   {
     id: 5,
     img:
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     title: "Vans sneakers",
-    price: "$38.99",
+    price: "38.99",
     rating: 4,
+    sales : 170
   },
 ];
 
