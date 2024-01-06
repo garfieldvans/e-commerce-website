@@ -10,6 +10,7 @@
     padding-right: 1rem;
     padding-bottom: 0;
     border-bottom-right-radius: 0;
+    z-index: 9999;
   }
   @media (min-width: $md) and (max-width: $mdr) {
     max-width: 10rem;
@@ -19,7 +20,7 @@
   }
 
   background: white;
-  width: 13rem;
+  width: 12rem;
   padding-bottom: 1.5rem;
   border-top-right-radius: 1.5rem;
   border-top-left-radius: 1.5rem;

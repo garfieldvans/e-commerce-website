@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import css from "./Explore.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -12,8 +12,17 @@ import {
 import { event, product, promos, responsive } from "../../utils/data";
 import { Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
+import { getDataProduct } from "../../../APIs/GetApi";
 
 const ExploreScreen = () => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getDataProduct()
+      .then((jsonData) => setData(jsonData))
+      .catch((error) => console.error('Error setting data:', error));
+  }, []);
   return (
     <div className={`xPaddings ${css.wrapper}`}>
       <div className={css.container}>
@@ -58,19 +67,19 @@ const ExploreScreen = () => {
           <div className={`primaryText ${css.sectionTitle2}`}>
             <p>New Product</p>
             <div className={css.seeAll}>
-              <Link to="#" className={css.btn}>
+              <Link to="/products" className={css.btn}>
                 <span>See all</span>
                 <FaArrowRightLong size={15} />
               </Link>
             </div>
           </div>
           <Carousel responsive={responsive} className={css.slider}>
-            {product.map((item, i) => {
-              console.log(item);
+            {data.map((item, i) => {
+              // console.log(item);
               return (
                 <div className={`${css.productcard}`} key={i}>
-                  <img src={item.img} alt={item.title} className={css.img} />
-                  <p className={css.title}>{item.title}</p>
+                  <img src={item.image} alt={item.name} className={css.img} />
+                  <p className={css.title}>{item.name}</p>
                   <div className={css.pricerates}>
                     <span className={css.price}>Price ${item.price}</span>
                     <div className={` ${css.rates}`}>
